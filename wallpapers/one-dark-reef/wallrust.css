@@ -1,0 +1,24 @@
+/* Wallbash Palette */
+/* Wallpaper: od_reef.png */
+/* Mode: dark */
+:root {
+  --pry: #272C33;
+  --txt: #FFFFFF;
+  --pry1: #272C33;
+  --txt1: #FFFFFF;
+  --pry2: #343A45;
+  --txt2: #FFFFFF;
+  --pry3: #545862;
+  --txt3: #FFFFFF;
+  --pry4: #ABBBBE;
+  --txt4: #0C0C0C;
+  --xa1: #00132E;
+  --xa2: #022352;
+  --xa3: #06377A;
+  --xa4: #0E438C;
+  --xa5: #245FB3;
+  --xa6: #3D79CC;
+  --xa7: #5A92E0;
+  --xa8: #90B8F0;
+  --xa9: #C0D9FC;
+}

@@ -1,0 +1,24 @@
+/* Wallbash Palette */
+/* Wallpaper: a_landscape_with_mountains_and_trees.jpg */
+/* Mode: light */
+:root {
+  --pry: #E8D9B9;
+  --txt: #070708;
+  --pry1: #E8D9B9;
+  --txt1: #070708;
+  --pry2: #D9C4A2;
+  --txt2: #0A0A0B;
+  --pry3: #AF977A;
+  --txt3: #111111;
+  --pry4: #604F3F;
+  --txt4: #FFFFFF;
+  --xa1: #FFEFCC;
+  --xa2: #F0DAAA;
+  --xa3: #E6CD9A;
+  --xa4: #C2AB7A;
+  --xa5: #A38F65;
+  --xa6: #8F7D57;
+  --xa7: #7D6D4B;
+  --xa8: #6B5B3A;
+  --xa9: #524529;
+}
