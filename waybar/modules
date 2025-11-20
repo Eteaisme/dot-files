@@ -1,5 +1,4 @@
 /* Waybar Modules */
-
 {
 
 //  NUMBERS and ICONS style
@@ -23,11 +22,11 @@
 	"format-icons": {
 		"1": " ",
 		"2": " ",
-		"3": " ",
-		"4": " ",
-		"5": "",
+		"3": " ",
+		"4": " ",
+		"5": "",
 		"6": " ",
-		"7": "",
+		"7": "",
 		"8": " ",
 		"9": " ",
 		"10": "10",
@@ -133,20 +132,22 @@
 	"format": "{icon} {volume}%",
 	"format-bluetooth": "{icon} 󰂰 {volume}",
 	"format-muted": "󰖁",
-	"format-icons": {
-		"headphone": "",
-		"hands-free": "",
-		"headset": "",
-		"phone": "",
-		"portable": "",
-		"car": "",
-		"default": [
-			"", "", "󰕾",  ""
-		],
-		"ignored-sinks": [
-			"Easy Effects Sink"
-		],
-	},
+    "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰋋",
+        "headset": "󰋋",
+        "phone": "󰄜",
+        "portable": "󰄜",
+        "car": "󰄍",
+        "default": [
+            "󰕿",
+        "󰖀",
+        "󰕾"
+        ],
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
 	"scroll-step": 5.0,
 	"on-click": "~/.config/hypr/scripts/Volume.sh --toggle",
 	"on-click-right": "pavucontrol -t 3",
