@@ -99,4 +99,63 @@ return {
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
 	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
+
+			require("nvim-tree").setup({
+				view = {
+					side = "right",
+					width = 35,
+				},
+				filters = {
+					dotfiles = false,
+				},
+				renderer = {
+					highlight_opened_files = "name",
+				},
+				actions = {
+					open_file = { quit_on_open = false },
+				},
+			})
+
+			local api = require("nvim-tree.api")
+
+			local function toggle_tree_focus()
+				if vim.bo.filetype == "NvimTree" then
+					vim.cmd("wincmd p")
+					return
+				end
+
+				if api.tree.is_visible() then
+					api.tree.focus()
+					return
+				end
+
+				api.tree.open()
+				api.tree.focus()
+			end
+
+			vim.keymap.set(
+				"n",
+				"<leader>e",
+				toggle_tree_focus,
+				{ noremap = true, silent = true, desc = "Toggle NvimTree focus" }
+			)
+		end,
+	},
+	{
+		"kaarmu/typst.vim",
+		ft = "typst",
+		lazy = false,
+	},
+	{
+		"chomosuke/typst-preview.nvim",
+		lazy = false,
+		version = "1.*",
+		opts = {},
+	},
 }

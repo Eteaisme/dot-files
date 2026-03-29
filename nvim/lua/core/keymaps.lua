@@ -12,11 +12,10 @@ end
 vim.g.mapleader = " "
 
 -- OIL --
-Map("n", "<leader>e", ":Oil . <cr>")
 
 -- WRITING & QUITING --
 Map("n", "<Leader>w", ":write<CR>")
-Map("n", "<Leader>a", ":wqa<CR>")
+Map("n", "<Leader>a", ":wqa!<CR>")
 Map("n", "<Leader>o", ":so<CR>")
 Map("n", "q", ":bd!<CR>")
 
