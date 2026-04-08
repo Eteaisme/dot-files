@@ -30,3 +30,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.spell = true
 	end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "LineNr", { fg = "#808080" })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#a0a0a0", bold = true })
+	end,
+})
+
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#808080" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#a0a0a0", bold = true })

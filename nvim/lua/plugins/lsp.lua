@@ -121,10 +121,28 @@ return {
 						},
 					},
 				},
+				-- JavaScript/TypeScript
+				ts_ls = {},
+				-- Astro
+				astro = {},
+				-- ESLint
+				eslint = {},
+				-- JSON
+				jsonls = {},
+				-- Typst
+				tinymist = {
+					settings = {
+						exportPdf = "onSave",
+					},
+				},
 			}
 
 			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, { "stylua" })
+			vim.list_extend(ensure_installed, {
+				"stylua",
+				"prettier", -- Formatter for JS/TS/Astro/React
+				"eslint_d", -- Fast ESLint daemon
+			})
 			require("mason-tool-installer").setup({
 				ensure_installed = ensure_installed,
 			})
@@ -167,6 +185,14 @@ return {
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				astro = { "prettier" },
+				json = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
 			},
 		},
 	},
@@ -223,7 +249,18 @@ return {
 			vim.defer_fn(function()
 				require("nvim-treesitter.configs").setup({
 					-- SYNTAX
-					ensure_installed = { "lua", "vim", "cpp" },
+					ensure_installed = {
+						"lua",
+						"vim",
+						"cpp",
+						"javascript",
+						"typescript",
+						"tsx",
+						"astro",
+						"json",
+						"css",
+						"html",
+					},
 					auto_install = false,
 					highlight = {
 						enable = true,

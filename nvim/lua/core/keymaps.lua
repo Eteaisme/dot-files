@@ -44,3 +44,25 @@ Map("n", "A", "<cmd>nohlsearch<CR>A")
 Map("n", "v", "<cmd>nohlsearch<CR>v")
 Map("n", "V", "<cmd>nohlsearch<CR>V")
 Map("n", "<C-v>", "<cmd>nohlsearch<CR><C-v>")
+
+-- TYPST PREVIEW --
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "typst",
+	callback = function()
+		vim.keymap.set("n", "<Leader>p", function()
+			local file = vim.fn.expand("%:p")
+			local pdf = vim.fn.fnamemodify(file, ":r") .. ".pdf"
+			-- Compile typst file to PDF
+			vim.fn.jobstart({ "typst", "compile", file, pdf }, {
+				on_exit = function(_, exit_code)
+					if exit_code == 0 then
+						-- Open PDF with zathura
+						vim.fn.jobstart({ "zathura", pdf }, { detach = true })
+					else
+						vim.notify("Typst compilation failed", vim.log.levels.ERROR)
+					end
+				end,
+			})
+		end, { buffer = true, silent = true, desc = "Preview Typst in Zathura" })
+	end,
+})
